@@ -1,0 +1,29 @@
+#!/bin/bash
+<<comment
+18. Write a Shell Script to find the sum of the series [ 1-X^2/2!+X^4/4!- .........]. 
+Test Data :
+Input the Value of x :2
+Input the number of terms : 5
+Expected Output :
+the sum = -0.415873
+Number of terms = 5
+value of x = 2.000000
+comment
+sum=1
+p=1
+fact_term=2
+read -p "Enter value of x: " x
+read -p "Enter number of terms: " terms
+for(( i=1; i<$terms; i++))
+do
+	fact=1
+	for(( j=1; j<=$fact_term; j++))
+	do
+		fact=$(( $fact*j )) # calculate factorial
+	done
+	p=$(( -$p*$x*$x )) # alternate sign and calculate power
+	result=$( echo "scale=6;$p/$fact"|bc )
+	fact_term=$fact_term+2 # increment factorial term by 2: 2!, 4!..
+	sum=$( echo "scale=6;$sum+$result"|bc )
+done
+echo "Sum of series: $sum"

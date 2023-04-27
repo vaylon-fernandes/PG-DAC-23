@@ -1,0 +1,277 @@
+#!/bin/bash
+
+<<comment
+36. Write a Shell Script to display a such a pattern for n rows 
+using a number that starts with 1 and each row will have a 1 as the first a>
+
+  1
+ 121
+12321
+comment
+
+for(( i=1; i<4; i++ ))
+do
+        for(( j=3; j>=i; j-- ))
+        do 
+                echo -n " "
+        done
+        for(( j=1; j<=i; j++ ))
+        do
+                echo -n "$j"
+        done
+	for(( j=i-1; j>=1; j--))
+	do
+		echo -n "$j"
+	done
+echo ""
+done
+
+
+#!/bin/bash
+
+<<comment
+36. Write a Shell Script to display a such a pattern for n rows using a number that starts with 1 and each row will have a 1 as the first a>
+
+  1
+ 121
+12321
+comment
+
+for(( i=0; i<4; i++ ))
+do
+        for(( j=3; j>=i; j-- ))
+        do 
+                echo -n " "
+        done
+        for(( j=1; j<=i; j++ ))
+        do
+                echo -n "$j"
+        done
+	for(( j=1; j<=i; j++))
+	do
+		echo -n "$j"
+	done
+echo ""
+done
+
+
+#!/bin/bash
+
+<<comment
+40. Write a Shell Script to display the pyramid pattern using the alphabet. 
+
+        A
+      A B A 
+    A B C B A
+  A B C D C B A 
+
+comment
+
+for(( i=1; i<5; i++ ))
+do
+        for(( j=5; j>=i+2; j-- ))
+        do 
+                echo -ne "  "
+        done
+        for(( j=1; j<=i; j++ ))
+        do
+                echo -ne "\x4$j "
+        done
+	for(( j=i-1; j>=1; j--))
+	do
+	        echo -ne "\x4$j "
+	done
+echo ""
+done
+
+
+#!/bin/bash
+
+<<comment
+39. Write a Shell Script to find the number and sum of all integers between 100 and 200 which are divisible by 9. 
+Expected Output :
+Numbers between 100 and 200, divisible by 9 :
+108 117 126 135 144 153 162 171 180 189 198
+The sum : 1683
+comment
+
+sum=0
+echo "Numbers between 100 and 200, divisible by 9 :"
+for(( i=100; i<=200; i++ ))
+do	
+	if(( i%9==0 ))
+	then 
+		echo -n  "$i "
+		sum=$(( $sum + $i ))
+	fi
+done
+echo ""
+echo "The sum : $sum"
+#!/bin/bash
+
+<<comment
+D. Write a program to check whether the number is even or odd?
+comment
+
+read -p "Enter a number: " num
+
+if (($num % 2 == 0))
+	then
+	      echo "$num is a even number"
+	else
+	      echo "$num is a odd number"
+fi
+#!/bin/bash
+
+read -p "Enter a number: " num
+
+if (($num % 2 == 0))
+	then
+	      echo "$num is a even number"
+	else
+	      echo "$num is a odd number"
+fi
+#!/bin/bash
+<<comment
+32. Write a Shell Script to determine whether a given number is prime or not. 
+ Test Data :
+Input a number: 13
+Expected Output :
+13 is a prime number.
+comment
+
+echo "Input a number: "
+read num
+if(( num==1 ))
+then
+	echo "$num is not a prime number."
+fi
+flag=0
+for(( j=2; j<=num/2; j++ ))
+do
+	if(( num%j==0 ))
+	then
+		echo "$num is not a prime number"
+		flag=1
+		break
+	fi
+done
+if(( flag==0 && num!=1 ))
+then
+	echo -n "$num is a prime number"
+	echo ""
+fi
+	
+#!/bin/bash
+
+<<comment
+36. Write a Shell Script to display a such a pattern for n rows 
+using a number that starts with 1 and each row will have a 1 as the first a>
+
+  1
+ 121
+12321
+comment
+
+for(( i=1; i<4; i++ ))
+do
+        for(( j=3; j>=i; j-- ))
+        do 
+                echo -n " "
+        done
+        for(( j=1; j<=i; j++ ))
+        do
+                echo -n "$j"
+        done
+	for(( j=i-1; j>=1; j--))
+	do
+		echo -n "$j"
+	done
+echo ""
+done
+
+
+#!/bin/bash
+<<comment
+38. Write a Shell Script to check whether a number is a palindrome or not. 
+Test Data :
+Input a number: 121
+Expected Output :
+121 is a palindrome number.
+comment
+
+echo "Input a number: "
+read num
+temp=$num
+sum=0
+while(( num!=0 ))
+do
+	sum=$(( $(( $sum * 10 )) + $(( $num % 10 ))))
+	num=$(( $num / 10 ))
+done
+
+if (( $temp == $sum ))
+then
+	echo -n "$temp is a palindrome number."
+else
+	echo -n "Not a palindrome number."
+fi
+echo ""
+#!/bin/bash
+<<comment
+34. Write a Shell Script to find the prime numbers within a range of numbers. 
+Test Data :
+Input starting number of range: 1
+Input ending number of range : 50
+Expected Output :
+The prime number between 1 and 50 are :
+2 3 5 7 11 13 17 19 23 29 31 37 41 43 47
+comment
+
+read -p "Input starting number of range:  " start
+read -p "Input endinging number of range:  " end
+
+echo "The prime number between $start and $end  are :"
+for(( num=$start; num<=$end; num++ ))
+do
+	if(( $num==1 ))
+	then 
+		continue
+	fi
+
+	flag=0
+	for(( j=2; j<=num/2; j++ ))
+	do
+		if(( num%j==0 ))
+		then
+			flag=1
+			break
+		fi
+	done
+
+	if(( flag==0 ))
+	then
+		echo -n "$num "
+	fi
+done
+echo ""
+	
+#!/bin/bash
+<<comment
+37. Write a Shell Script to display the number in reverse order. 
+Test Data :
+Input a number: 12345
+Expected Output :
+The number in reverse order is : 54321
+comment
+
+echo "Input a number: "
+read num
+reverse=0
+while(( num!=0 ))
+do
+	reverse=$(( $(( $reverse * 10 )) + $(( $num % 10 ))))
+	num=$(( $num / 10 ))
+done
+echo -n "The number in reverse order is : $reverse"
+echo ""

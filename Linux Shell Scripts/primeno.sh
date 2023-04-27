@@ -1,0 +1,39 @@
+#!/bin/bash
+<<comment
+34. Write a Shell Script to find the prime numbers within a range of numbers. 
+Test Data :
+Input starting number of range: 1
+Input ending number of range : 50
+Expected Output :
+The prime number between 1 and 50 are :
+2 3 5 7 11 13 17 19 23 29 31 37 41 43 47
+comment
+
+read -p "Input starting number of range:  " start
+read -p "Input endinging number of range:  " end
+
+echo "The prime number between $start and $end  are :"
+for(( num=$start; num<=$end; num++ ))
+do
+	if(( $num==1 ))
+	then 
+		continue
+	fi
+
+	flag=0
+	for(( j=2; j<=num/2; j++ ))
+	do
+		if(( num%j==0 ))
+		then
+			flag=1
+			break
+		fi
+	done
+
+	if(( flag==0 ))
+	then
+		echo -n "$num "
+	fi
+done
+echo ""
+	

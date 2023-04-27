@@ -1,0 +1,22 @@
+Username				GroupName			sudo
+# tinku					tinku					y
+#dac 					dac					y
+u1					dac					n
+u2					dac					n
+u3					dac					n
+dbda					dbda					y
+u4					dbda					n
+u5					dbda					n
+ditiss					ditiss					y
+u6					ditiss					n
+u7					ditiss					n
+
+
+Create a text file with every user.
+Remove the read permission for others.
+
+Check u4.txt is readable by which users?
+dbda, u4, u5
+create a group reading and add the user u1,u3,u5 and u7 to the group.
+
+change the group of u6.txt to reading.
