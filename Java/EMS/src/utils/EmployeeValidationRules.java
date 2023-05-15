@@ -12,17 +12,17 @@ import com.custom_exception.EmployeeHandlingException;
 public interface EmployeeValidationRules {
 	// validate all input
 	static Employee validateAllInputs(String id, String first_name, String last_name, double salary, String dept,
-			String joiningDate, Map<String, Employee> emps) throws EmployeeHandlingException{
+			String joiningDate, Map<String, Employee> emps) throws EmployeeHandlingException {
 		checkDuplicateEmpid(id, emps);
 		LocalDate validJoindate = parseAndValidateHireDate(joiningDate);
 		Department validDept = parseandValidateDepartment(dept);
-		
+
 		return new Employee(id, first_name, last_name, salary, validDept, validJoindate);
 	}
 
 	// add static method to parse and validate dept
 	static Department parseandValidateDepartment(String deptName) {
-		return Department.valueOf(deptName);
+		return Department.valueOf(deptName.toUpperCase());
 	}
 
 	// add static method to parse and validate hire date
@@ -39,10 +39,19 @@ public interface EmployeeValidationRules {
 		return joinDate;
 	}
 
+	// static method to check if duplicate employee exists
 	static void checkDuplicateEmpid(String empId, Map<String, Employee> emps) throws EmployeeHandlingException {
 		if (emps.containsKey(empId)) { // calls key classes equals method to check
 			throw new EmployeeHandlingException("Employee with ID: " + empId + " already exists!!");
 		}
+	}
+
+	// static method to check if employee is present
+	static String validateEmpId(String empID, Map<String, Employee> emps) throws EmployeeHandlingException {
+		if (!emps.containsKey(empID)) { // calls key classes equals method to check
+			throw new EmployeeHandlingException("Employee with ID: " + empID + " does not exists!!");
+		}
+		return empID;
 	}
 
 }
