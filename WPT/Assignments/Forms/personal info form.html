@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/personal_info.css">
+</head>
+<body>
+    <form id="Registration" action="validate" method="post">
+        <fieldset>
+            <legend>Name and Address</legend>
+            <div><label for="SSN">SSN: </label>
+                <input type="text" name="SSN" id="SSN" maxlength="10"></div>
+            <div><label for="name">Full Name: </label>
+                <input type="text" name="name" id="name"></div>
+            <div><label for="street">Street and number: </label>
+                <input type="text" name="street" id="street"></div>
+            <div><label for="postal">Postal Code: </label>
+                <input type="text" name="postal" id="postal"></div>
+           <div> <label for="city">City: </label>
+            <input type="text" name="city" id="city"></div>
+        </fieldset>
+        <fieldset>
+            <legend>Username and Password</legend>
+            <label for="username">Username: </label>
+            <input type="email" name="mail" id="mail">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+        </fieldset>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
