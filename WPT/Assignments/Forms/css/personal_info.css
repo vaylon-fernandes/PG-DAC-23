@@ -6,6 +6,45 @@ body{
 fieldset{
     border-color: rgb(65, 14, 219);
     border-radius: 10px;
-    border-width: 3px;
+    border-width: 4px;
+    width: 35%;
+    margin-bottom: 10px;
 }
+
+legend,input[type="submit"]{
+    color: white;
+    background-color: rgb(65, 14, 219);
+    border-radius: 4px!important;
+}
+
+.input-container label{
+    display:inline-block;
+    width: 20%;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+#message{
+    background-color: rgb(65, 14, 219);
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 4px;
+}
+
+input[type="text"],input[type="password"],input[type="email"]{
+    background-color:black;
+    box-shadow: 2px 2px 2px darkgreen;
+    /* border-color: darkgreen; */
+} 
+
+/* input[type="checkbox"]{
+    margin-left:10 px ;
+} */
+input[type="submit"]{
+    font-size: 15px;
+    margin-left: 60px;
+}
+
+#show-pass-label{
+    font-size: 0.9rem!important;}
 

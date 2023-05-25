@@ -1,32 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Document</title>
-    <link rel="stylesheet" href="./css/personal_info.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./css/personal_info.css" />
+  </head>
+  <body>
     <form id="Registration" action="validate" method="post">
-        <fieldset>
-            <legend>Name and Address</legend>
-            <div><label for="SSN">SSN: </label>
-                <input type="text" name="SSN" id="SSN" maxlength="10"></div>
-            <div><label for="name">Full Name: </label>
-                <input type="text" name="name" id="name"></div>
-            <div><label for="street">Street and number: </label>
-                <input type="text" name="street" id="street"></div>
-            <div><label for="postal">Postal Code: </label>
-                <input type="text" name="postal" id="postal"></div>
-           <div> <label for="city">City: </label>
-            <input type="text" name="city" id="city"></div>
-        </fieldset>
-        <fieldset>
-            <legend>Username and Password</legend>
-            <label for="username">Username: </label>
-            <input type="email" name="mail" id="mail">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password">
-        </fieldset>
-        <input type="submit" value="Submit">
+      <fieldset>
+        <legend>Name and Address</legend>
+        <div class="input-container">
+          <label for="SSN">SSN: </label>
+          <input type="text" name="SSN" id="SSN" maxlength="10" />
+          <span id="message">Fill in name and address</span>
+        </div>
+        <div class="input-container">
+          <label for="name">Full Name: </label>
+          <input type="text" name="name" id="name" />
+        </div>
+        <div class="input-container">
+          <label for="street">Street and number: </label>
+          <input type="text" name="street" id="street" />
+        </div>
+        <div class="input-container">
+          <label for="postal">Postal Code: </label>
+          <input type="text" name="postal" id="postal" />
+        </div>
+        <div class="input-container">
+          <label for="city">City: </label>
+          <input type="text" name="city" id="city" />
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Username and Password</legend>
+        <div class="input-container" id="username-container">
+          <label for="mail">Username: </label>
+          <input type="email" name="mail" id="mail" />
+        </div>
+        <div class="input-container" id="password-container">
+          <label for="password">Password: </label>
+          <input type="password" name="password" id="password" />
+        </div>
+        <div class="show-pass-container" id="show-pass-container">
+          <input type="checkbox" name="show-pass" id="show-pass" />
+          <label for="show-pass" id="show-pass-label">show password</label>
+        </div>
+      </fieldset>
+      <input type="submit" value="Submit" />
     </form>
-</body>
+  </body>
 </html>

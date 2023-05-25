@@ -1,0 +1,58 @@
+*{
+    font: 1em sans-serif;
+}
+#sphere-icon{
+    height: 8rem;
+    width: 8rem;
+    float: left;
+}
+
+#title{
+    font-size: 80px;
+    color:teal
+}
+
+#navbar{
+    background-color: turquoise;
+}
+#navbar li{
+    display: inline-block;
+    margin-right: 25px;
+    font-size: large;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+#navbar a{
+    text-decoration: none;
+    color: white;
+}
+
+#reservation{
+    /*position:absolute;
+    right: 0px;*/
+    float: right;
+}
+
+.reservation-table{
+    table-layout: fixed;
+    width: 100%;
+}
+.text-center{
+text-align: center;
+}
+.reservation-table th,td,tr{
+    border:1px solid black;
+}
+td{
+    padding-bottom: 10px;
+    vertical-align: top;
+}
+
+footer{
+    background-color: turquoise;
+}
+
+footer::first-letter{
+    font-size: large;
+}
