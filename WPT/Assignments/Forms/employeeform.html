@@ -2,6 +2,21 @@
 <html lang="en">
   <head>
     <title>Employee Registration Form</title>
+    <style>
+      .table {
+        display: table;
+        width: 30%;
+      }
+      .t-row {
+        display: table-row;
+      }
+      .t-cell {
+        display: table-cell;
+      }
+      .table input {
+        width: 60%;
+      }
+    </style>
   </head>
   <body>
     <form action="validate" method="post">
@@ -50,13 +65,30 @@
           <tr>
             <td>Date of Joining</td>
             <td>
-              <input type="text" name="dd" id="dd" size="1" maxlength="2" /> /
-              <input type="text" name="mm" id="mm" size="1" maxlength="2" /> /
-              <input type="text" name="yyyy" id="yyyy" size="1" maxlength="2" />
-              <br />
-              <label for="dd">dd</label>
-              <label for="mm">mm</label>
-              <label for="yyyy">yyyy</label>
+              <div class="table">
+                <div class="t-row">
+                  <div class="t-cell">
+                    <input type="text" id="dd" name="dd" /><span>/</span>
+                  </div>
+                  <div class="t-cell">
+                    <input type="text" id="mm" name="mm" /><span>/</span>
+                  </div>
+                  <div class="t-cell">
+                    <input type="text" id="yy" name="yy" />
+                  </div>
+                </div>
+                <div class="t-row">
+                  <div class="t-cell">
+                    <label for="dd">dd</label>
+                  </div>
+                  <div class="t-cell">
+                    <label for="mm">mm</label>
+                  </div>
+                  <div class="t-cell">
+                    <label for="yy">yyyy</label>
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
           <tr>
@@ -104,7 +136,14 @@
           </tr>
           <tr>
             <td>Training Program Needs to Attend</td>
-            <td></td>
+            <td>
+              <label for="trainings-select"></label>
+              <select name="trainings-select" id="trainings-select">
+                <option value="Javascript">Javascript</option>
+                <option value="JSTRUTS">JSTRUTS</option>
+                <option value="jQuery">jQuery</option>
+              </select>
+            </td>
           </tr>
           <tr>
             <td>Send the information at</td>
