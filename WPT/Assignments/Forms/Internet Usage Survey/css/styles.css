@@ -1,0 +1,40 @@
+.form-table{
+    /* width: inherit; */
+    table-layout: fixed;
+    width: 100%;
+}
+
+.form-container{
+    border-color: 1px solid blue;
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+}
+td{
+    width: fixed;
+    padding-top: 2.5rem;
+}
+
+#privacy-comment{
+    width: 75%;
+    height: 5.5em;
+}
+
+.name{
+    width: 75%;
+}
+
+#age{
+    width: 10%;
+}
+
+#zip-code{
+    width: 25%;
+}
+#submit-button{
+    float: right;
+}
+
+#clear-btn{
+    margin-left: 5%;
+}
