@@ -59,13 +59,6 @@ $(document).ready(function () {
   });
 
   $("#animate").click(function () {
-    $(".container").animate(
-      {
-        "font-size": "200px",
-        opacity: "0.5",
-        transform: "rotate(45deg)",
-      },
-      1000
-    );
+    $(".container").animate({ "margin-left": "100px", width: "300px" }, 800);
   });
 });
