@@ -21,12 +21,22 @@ $(document).ready(function () {
   $("#btn").click(function () {
     $.ajax({
       async: true,
-      url: `${window.origin}/getArticle`,
+      url: "https://en.wikipedia.org/wiki/Special:Random",
+      dataType: "html",
+
       success: function (result) {
+        const $html = $(response);
+        const title = $html.find("#firstHeading").text();
+        const intro = $html
+          .find("#mw-content-text p:not(.mw-empty-elt)")
+          .first()
+          .text();
+        const wikiLink =
+          "https://en.wikipedia.org/wiki/" + title.replace(/ /g, "_");
         $(".content-card").show();
-        $(".content-header").html(result.title);
-        $(".intro").html(result.intro);
-        $(".submit-btn").attr("href", result.link);
+        $(".content-header").html(title);
+        $(".intro").html(intro);
+        $(".submit-btn").attr("href", wikiLink);
       },
     });
   });

@@ -1,33 +1,32 @@
-var url = "https://en.wikipedia.org/w/api.php";
-
-var params = {
-  action: "query",
-  format: "json",
-  list: "random",
-  rnlimit: "1",
-  rnnamespace: "0",
-};
-
-url = url + "?origin=*";
-Object.keys(params).forEach(function (key) {
-  url += "&" + key + "=" + params[key];
-});
-
 $(function () {
+  // load on ready
   $("#btn").on("click", function () {
-    console.log("in callback");
-
     $.ajax({
-      async: true,
-      url: `${url}`,
-      success: function (result) {
-        console.log(result);
+      url: "https://en.wikipedia.org/w/api.php",
+      data: {
+        action: "query",
+        format: "json",
+        generator: "random",
+        grnnamespace: 0,
+        prop: "extracts",
+        exintro: true,
+        explaintext: true,
+      },
+      dataType: "jsonp",
+      success: function (response) {
+        console.log(response);
+        const pages = response.query.pages;
+        const pageId = Object.keys(pages)[0];
+        const title = pages[pageId].title;
+        const intro = pages[pageId].extract;
+        const wikiLink =
+          "https://en.wikipedia.org/wiki/" + title.replace(/ /g, "_");
         $(".content-card").show();
-        $(".content-header").html(result.query.random[0].title);
-        $(".intro").html(result.query.random[0].intro);
+        $(".content-header").html(title);
+        $(".intro").html(intro);
         $(".submit-btn").attr(
           "href",
-          `https://en.wikipedia.org/wiki/${result.query.random[0].title}`
+          `https://en.wikipedia.org/wiki/${wikiLink}`
         );
       },
     });
