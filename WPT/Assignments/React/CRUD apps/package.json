@@ -3,6 +3,16 @@
     "axios": "^1.4.0",
     "bootstrap": "^4.6.0",
     "create-react-app": "^5.0.1",
+    "react": "^18.2.0",
     "react-router-dom": "^6.11.2"
-  }
+  },
+  "name": "crud-apps",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
