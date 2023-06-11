@@ -7,6 +7,20 @@
     float: left;
 }
 
+.text-white{
+    color: white;
+}
+
+
+#time-text>td,#table-head>th{
+    font-weight: bold;
+}
+
+nav>ul>li>a{
+    font-weight: bold;
+
+}
+
 #title{
     font-size: 80px;
     color:teal

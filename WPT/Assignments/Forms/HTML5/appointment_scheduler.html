@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Problem 1 1</title>
+  </head>
+  <body>
+    <h1>Appointment Scheduler</h1>
+    <fieldset>
+      <legend>Personal Information</legend>
+      <label for="Name">Name</label><br />
+      <input type="text" name="Name" id="Name" />
+      <br /><br />
+      <label for="TelephoneNumber">Telephone Number</label><br />
+      <input type="number" name="TelephoneNumber" id="TelephoneNumber" />
+      <br /><br />
+      <label for="Email">E-mail address</label><br />
+      <input type="text" name="Email" id="Email" />
+      <br /><br />
+      <label for="date">Date</label><br />
+      <input type="date" name="date" id="date" />
+      <br /><br />
+    </fieldset>
+    <fieldset>
+      <legend>Appointment Request</legend>
+      <label for="visit">What is the reason for your visit?</label><br />
+      <input
+        type="text"
+        name="visit"
+        id="visit"
+        placeholder="Reason"
+        required
+      /><br /><br />
+      <label for="pain">Current pain level</label><br />
+      <input type="range" name="pain" id="pain" /><br /><br />
+      <label for="PreferredDate">Preferred date</label><br />
+      <input type="date" name="PreferredDate" id="PreferredDate" /><br /><br />
+      <label for="time">Preferred time</label><br />
+      <input type="time" name="time" id="time" /><br /><br />
+    </fieldset>
+    <br />
+    &nbsp;<button type="submit">Submit</button>
+  </body>
+</html>

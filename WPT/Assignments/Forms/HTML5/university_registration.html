@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Registration</title>
+    <link rel="stylesheet" href="css/university.css" />
+  </head>
+  <body>
+    <form action="submit">
+      <fieldset>
+        <legend>Registration Details</legend>
+        <table>
+          <tr>
+            <td>
+              <label for="University" id="University">University:</label>
+            </td>
+            <td>
+              <input type="text" id="University" name="University" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="Institute" id="Institute">Institute:</label>
+            </td>
+            <td>
+              <input type="text" id="Institute" name="Institute" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="Branch">Branch:</label>
+            </td>
+            <td>
+              <select name="Branch" id="Branch">
+                <option value="select">--select--</option>
+                <option value="DAC">DAC</option>
+                <option value="DITISS">DITISS</option>
+                <option value="DBDA">DBDA</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="Degree">Degree:</label>
+            </td>
+            <td>
+              <select name="Degree" id="Degree">
+                <option value="select">--select--</option>
+                <option value="B.E.">B.E.</option>
+                <option value="M.E">M.E</option>
+                <option value="B.Tech">B.Tech</option>
+                <option value="M.Tech">M.Tech</option>
+              </select>
+              <input type="radio" name="degree" id="pursuing" />
+              <label for="pursuing" id="pursuing">Pursuing</label>
+              <input type="radio" name="degree" id="Completed" />
+              <label for="Completed" id="Completed">Completed</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="CPI">Average CPI:</label>
+            </td>
+            <td>
+              <input type="number" id="cpi" name="cpi" min="0" max="10" />
+              <span>Upto</span>
+              <input type="number" id="sem" name="sem" min="1" max="8" />
+              <label for="sem">Th Semester:</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="Experience">Experience:</label>
+            </td>
+            <td>
+              <input type="number" id="Experience" name="Experience" />
+              Years
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="Blog">Your Website or Blog:</label>
+            </td>
+            <td>
+              <input type="text" id="Blog" name="Blog" value="http://" />
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+    </form>
+  </body>
+</html>

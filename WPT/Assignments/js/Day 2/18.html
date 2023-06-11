@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <title>String Search</title>
+    <script src="scripts/18.js"></script>
+  </head>
+  <body>
+    <fieldset>
+      <legend>String Operations</legend>
+      <br />
+      <form>
+        Enter String : <input type="text" name="str1" id="str1" /><br />
+        Enter Sub String : <input type="text" name="str2" id="str2" /><br />
+        Replace with String :
+        <input type="text" name="str3" id="str3" disabled /><br />
+        Select an option : <br />
+        <input
+          type="radio"
+          name="string"
+          id="search"
+          value="search"
+          onclick="disableText()"
+        />
+        <label for="search">Search substring in main string</label><br />
+        <input
+          type="radio"
+          name="string"
+          id="upper"
+          value="upper"
+          onclick="disableText()"
+        />
+        <label for="upper">To Upper Case</label><br />
+        <input
+          type="radio"
+          name="string"
+          id="lower"
+          value="lower"
+          onclick="disableText()"
+        />
+        <label for="lower"></label>To Lower Case<br />
+        <input
+          type="radio"
+          name="string"
+          id="trim"
+          value="trim"
+          onclick="disableText()"
+        />
+        <label for="trim">Trim Spaces</label><br />
+        <input
+          type="radio"
+          name="string"
+          id="concat"
+          value="concat"
+          onclick="disableText()"
+        />
+        <label for="concat"></label>Concatenate<br />
+        <input
+          type="radio"
+          name="string"
+          id="replace"
+          value="replace"
+          onclick="disableText()"
+        />
+        <label for="replace">Replace</label><br />
+        <button type="button" onclick="stringOperation()">Submit Query</button
+        ><br />
+      </form>
+      <div id="mydiv"></div>
+    </fieldset>
+  </body>
+</html>

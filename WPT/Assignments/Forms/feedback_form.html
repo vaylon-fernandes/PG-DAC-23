@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Feebback Form</title>
+  </head>
+  <body>
+    <h1>Sports Website Shopping Website Feebback</h1>
+    <p>
+      Greeting!!!! We would like your valueable feebback on your experience
+      shopping with us.
+    </p>
+    <form action="submit" method="post">
+      <label for="problem_type"
+        ><span class="mandatory">*</span>Type of Problem:</label
+      >
+      <select name="problem_type" id="problem_type">
+        <option value="Technical">Technical (e.g. website down)</option>
+        <option value="Unavailable">Product Not Available</option>
+        <option value="Missing">Missing Product Information</option>
+      </select>
+      <br />
+      <br />
+      <label for="username"><span class="mandatory">*</span>Username: </label>
+      <input type="text" id="username" required />
+      <br />
+      <br />
+      <label for="Email"><span class="mandatory">*</span>Email: </label>
+      <input type="email" name="Email" id="Email" required />
+      <br /><br />
+      <label for="Location"><span class="mandatory">*</span>Location: </label>
+      <input type="text" name="Location" id="Location" required />
+      <br /><br />
+      <label for="Phone">Phone: </label>
+      <input type="number" name="Phone" id="Phone" />
+      <br /><br />
+      <label for="Description"
+        ><span class="mandatory">*</span>Description of the problem:
+      </label>
+      <textarea
+        name="Description"
+        id="Description"
+        cols="30"
+        rows="5"
+        required
+      ></textarea
+      ><br /><br />
+      <label for="Notification">Notification of problem solved: </label>
+      <input type="checkbox" name="Notification" id="Notification" />
+      <br /><br />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

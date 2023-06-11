@@ -1,0 +1,41 @@
+*{
+    font-size: 20px;
+    color: white;
+}
+
+body{
+    background-color: rgb(36, 85, 149);
+    /* width: 800px; */
+}
+table{
+    margin: auto;
+}
+td{
+    padding: 10px;
+}
+
+input{
+    border-radius: 5px;
+}
+tr>td:first-child {
+    text-align: right;
+}
+label{
+    text-align: center;
+}
+#Degree,#Degree>option,#Branch,#Branch>option{
+    color: black;
+}
+
+#Blog{
+    color: black;
+}
+
+#sem{
+    width: 25%;
+    text-align: right;
+}
+
+#cpi,#sem,#Experience{
+    width: 60px;
+}
