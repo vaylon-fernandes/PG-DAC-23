@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reservation Details</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <form id="reservationForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+      <br /><br />
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required />
+      <br /><br />
+      <label for="seats">No of Seats:</label>
+      <input type="number" id="seats" name="seats" min="1" required />
+      <br /><br />
+      <button id="bookBtn">Book Tickets</button>
+    </form>
+
+    <div id="memberForm" style="display: none">
+      <h3>Enter Member Details</h3>
+      <div id="memberInputs"></div>
+      <button id="submitBtn">Submit</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

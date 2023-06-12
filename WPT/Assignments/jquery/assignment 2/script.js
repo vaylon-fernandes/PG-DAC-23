@@ -1,13 +1,14 @@
 $(document).ready(function () {
-  $("#showBtn").on("click", function () {
-    var buttonText = $(this).text();
+  $("#showBtn").on("click", function (event) {
+    event.preventDefault();
+    var buttonText = $(this).html();
 
     // Toggle button text and show/hide image
     if (buttonText === "Show") {
-      $(this).text("Hide");
+      $(this).html("Hide");
       $("#myImage").show();
     } else {
-      $(this).text("Show");
+      $(this).html("Show");
       $("#myImage").hide();
     }
 
