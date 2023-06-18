@@ -1,0 +1,400 @@
+Microsoft Windows [Version 10.0.22621.1848]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Vaylon Fernandes>mysql -u root -p
+Enter password: *******
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 78
+Server version: 8.0.32 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use iacsd_march23;
+Database changed
+mysql> # 1. to find all employees
+mysql> select * from emp;
++-------+----------+--------------+------+------------+----------+---------+--------+
+| EMPNO | ENAME    | job          | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+----------+--------------+------+------------+----------+---------+--------+
+|  7369 | SMITH    | SENIOR CLERK | 7902 | 1980-12-17 | 10800.00 |    NULL |     20 |
+|  7499 | ALAN     | SALESMAN     | 7698 | 1981-02-20 |  3178.02 |  300.00 |     30 |
+|  7521 | WARD     | SALESMAN     | 7698 | 1981-02-22 |  3055.80 |  500.00 |     30 |
+|  7566 | JONES    | MANAGER      | 7839 | 1981-04-02 |  6805.78 |    NULL |     20 |
+|  7654 | MARTIN   | SALESMAN     | 7698 | 1981-09-28 |  3055.80 | 1400.00 |     30 |
+|  7698 | BLAKE    | MANAGER      | 7839 | 1981-05-01 |  6519.82 |    NULL |     30 |
+|  7782 | CLARK    | manager      | 7777 | 1981-06-09 |  6445.49 |    NULL |     10 |
+|  7788 | SCOTT    | ANALYST      | 7566 | 1982-12-09 |  9720.00 |    NULL |     20 |
+|  7839 | KING     | manager      | 7777 | 1981-11-17 | 13154.03 |    NULL |     10 |
+|  7844 | TURNER   | SALESMAN     | 7698 | 1981-09-08 |  3188.65 |    0.00 |     30 |
+|  7876 | ADAMS    | CLERK        | 7788 | 1983-01-12 |  4196.18 |    NULL |     20 |
+|  7900 | JAMES    | CLERK        | 7698 | 1981-12-03 | 15638.27 |  500.00 |     30 |
+|  7902 | FORD     | ANALYST      | 7566 | 1981-12-03 |  9720.00 |    NULL |     20 |
+|  7934 | MILLER   | manager      | 7777 | 1982-01-23 |  3420.05 |    NULL |     10 |
+|  7699 | Roger    | manager      | 7777 | 1981-03-23 |  4998.53 |    NULL |     10 |
+|  7679 | SHANE    | CLERK        | 7902 | 1980-08-03 |  7677.11 |  500.00 |     20 |
+|  7370 | Rajan    | manager      | 7777 | 2017-01-01 | 19765.35 | 3456.00 |     10 |
+|  7371 | REVATI   | ANALYST      | 7912 | 2019-01-01 | 12365.57 |  300.00 |     20 |
+|  7372 | WALL     | SALESMAN     | 7698 | 1981-01-05 |  4251.53 |  500.00 |     30 |
+|  7900 | tom      | manager      |   30 | 1980-01-18 | 15638.27 |  200.00 |     20 |
+| 11111 | tom      | manager      | 7839 | 2020-01-01 |     NULL |  100.00 |     30 |
+| 22222 | jerry    | clerk        | 7839 | 2020-02-15 | 29296.88 |    NULL |     30 |
+| 33333 | spike    | analyst      | 7839 | 2020-04-25 | 27993.60 |  200.00 |     30 |
+|   100 | NULL     | AGE          | NULL | NULL       |     NULL |    NULL |   NULL |
+|   101 | NULL     | CAGE         | NULL | NULL       |  5500.00 |    NULL |   NULL |
+|   102 | NULL     | NULL         | NULL | NULL       |     NULL |    NULL |   NULL |
+|   103 | NULL     | NULL         | NULL | NULL       |     NULL |    NULL |   NULL |
+|   104 | NULL     | NULL         | NULL | NULL       |     NULL |    NULL |   NULL |
+|   105 | NULL     | NULL         | NULL | NULL       |     NULL |    NULL |   NULL |
+| 11111 | AAAA     | NULL         | NULL | NULL       |     NULL |    NULL |   NULL |
+|   101 | John Doe | Manager      | NULL | 2023-05-01 |  5500.00 |    NULL |     10 |
++-------+----------+--------------+------+------------+----------+---------+--------+
+31 rows in set (0.00 sec)
+
+mysql>
+mysql> # 2. to find all departments
+mysql> select * from dept;
++--------+------------+----------+
+| DEPTNO | DNAME      | LOC      |
++--------+------------+----------+
+|     10 | ACCOUNTING | NEW YORK |
+|     20 | RESEARCH   | DALLAS   |
+|     30 | SALES      | CHICAGO  |
+|     40 | OPERATIONS | BOSTON   |
++--------+------------+----------+
+4 rows in set (0.00 sec)
+
+mysql>
+mysql> #3.to find all employees working in dept 10
+mysql> select *
+    -> from emp
+    -> where deptno=10;
++-------+----------+---------+------+------------+----------+---------+--------+
+| EMPNO | ENAME    | job     | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+----------+---------+------+------------+----------+---------+--------+
+|  7782 | CLARK    | manager | 7777 | 1981-06-09 |  6445.49 |    NULL |     10 |
+|  7839 | KING     | manager | 7777 | 1981-11-17 | 13154.03 |    NULL |     10 |
+|  7934 | MILLER   | manager | 7777 | 1982-01-23 |  3420.05 |    NULL |     10 |
+|  7699 | Roger    | manager | 7777 | 1981-03-23 |  4998.53 |    NULL |     10 |
+|  7370 | Rajan    | manager | 7777 | 2017-01-01 | 19765.35 | 3456.00 |     10 |
+|   101 | John Doe | Manager | NULL | 2023-05-01 |  5500.00 |    NULL |     10 |
++-------+----------+---------+------+------------+----------+---------+--------+
+6 rows in set (0.00 sec)
+
+mysql>
+mysql> #4. to find all employees with job CLERK
+mysql> select *
+    -> from emp
+    -> where job='CLERK';
++-------+-------+-------+------+------------+----------+--------+--------+
+| EMPNO | ENAME | job   | MGR  | HIREDATE   | SAL      | COMM   | DEPTNO |
++-------+-------+-------+------+------------+----------+--------+--------+
+|  7876 | ADAMS | CLERK | 7788 | 1983-01-12 |  4196.18 |   NULL |     20 |
+|  7900 | JAMES | CLERK | 7698 | 1981-12-03 | 15638.27 | 500.00 |     30 |
+|  7679 | SHANE | CLERK | 7902 | 1980-08-03 |  7677.11 | 500.00 |     20 |
+| 22222 | jerry | clerk | 7839 | 2020-02-15 | 29296.88 |   NULL |     30 |
++-------+-------+-------+------+------------+----------+--------+--------+
+4 rows in set (0.00 sec)
+
+mysql>
+mysql> #5. to find all employees who joined on 1981-02-22
+mysql> #in oracle date format 22-FEB-1981
+mysql> #in mysql date format 1981-02-22
+mysql>
+mysql> select *
+    -> from emp
+    -> where hiredate='1981-02-22';
++-------+-------+----------+------+------------+---------+--------+--------+| EMPNO | ENAME | job      | MGR  | HIREDATE   | SAL     | COMM   | DEPTNO |+-------+-------+----------+------+------------+---------+--------+--------+|  7521 | WARD  | SALESMAN | 7698 | 1981-02-22 | 3055.80 | 500.00 |     30 |+-------+-------+----------+------+------------+---------+--------+--------+1 row in set (0.00 sec)
+
+mysql>
+mysql> #To combine conditions: (using and, or, not)
+mysql>
+mysql> #6. to find all employees with sal >1500 and work in department 30
+mysql>  select *
+    ->  from emp
+    ->  where sal >1500 and deptno=30;
++-------+--------+----------+------+------------+----------+---------+--------+
+| EMPNO | ENAME  | job      | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+--------+----------+------+------------+----------+---------+--------+
+|  7499 | ALAN   | SALESMAN | 7698 | 1981-02-20 |  3178.02 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN | 7698 | 1981-02-22 |  3055.80 |  500.00 |     30 |
+|  7654 | MARTIN | SALESMAN | 7698 | 1981-09-28 |  3055.80 | 1400.00 |     30 |
+|  7698 | BLAKE  | MANAGER  | 7839 | 1981-05-01 |  6519.82 |    NULL |     30 |
+|  7844 | TURNER | SALESMAN | 7698 | 1981-09-08 |  3188.65 |    0.00 |     30 |
+|  7900 | JAMES  | CLERK    | 7698 | 1981-12-03 | 15638.27 |  500.00 |     30 |
+|  7372 | WALL   | SALESMAN | 7698 | 1981-01-05 |  4251.53 |  500.00 |     30 |
+| 22222 | jerry  | clerk    | 7839 | 2020-02-15 | 29296.88 |    NULL |     30 |
+| 33333 | spike  | analyst  | 7839 | 2020-04-25 | 27993.60 |  200.00 |     30 |
++-------+--------+----------+------+------------+----------+---------+--------+
+9 rows in set (0.00 sec)
+
+mysql>
+mysql>
+mysql> #7. to find all employees with sal >1500 and work in department 30
+mysql> select *
+    -> from emp
+    ->  where sal >1500 or deptno=30;
++-------+----------+--------------+------+------------+----------+---------+--------+
+| EMPNO | ENAME    | job          | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+----------+--------------+------+------------+----------+---------+--------+
+|  7369 | SMITH    | SENIOR CLERK | 7902 | 1980-12-17 | 10800.00 |    NULL |     20 |
+|  7499 | ALAN     | SALESMAN     | 7698 | 1981-02-20 |  3178.02 |  300.00 |     30 |
+|  7521 | WARD     | SALESMAN     | 7698 | 1981-02-22 |  3055.80 |  500.00 |     30 |
+|  7566 | JONES    | MANAGER      | 7839 | 1981-04-02 |  6805.78 |    NULL |     20 |
+|  7654 | MARTIN   | SALESMAN     | 7698 | 1981-09-28 |  3055.80 | 1400.00 |     30 |
+|  7698 | BLAKE    | MANAGER      | 7839 | 1981-05-01 |  6519.82 |    NULL |     30 |
+|  7782 | CLARK    | manager      | 7777 | 1981-06-09 |  6445.49 |    NULL |     10 |
+|  7788 | SCOTT    | ANALYST      | 7566 | 1982-12-09 |  9720.00 |    NULL |     20 |
+|  7839 | KING     | manager      | 7777 | 1981-11-17 | 13154.03 |    NULL |     10 |
+|  7844 | TURNER   | SALESMAN     | 7698 | 1981-09-08 |  3188.65 |    0.00 |     30 |
+|  7876 | ADAMS    | CLERK        | 7788 | 1983-01-12 |  4196.18 |    NULL |     20 |
+|  7900 | JAMES    | CLERK        | 7698 | 1981-12-03 | 15638.27 |  500.00 |     30 |
+|  7902 | FORD     | ANALYST      | 7566 | 1981-12-03 |  9720.00 |    NULL |     20 |
+|  7934 | MILLER   | manager      | 7777 | 1982-01-23 |  3420.05 |    NULL |     10 |
+|  7699 | Roger    | manager      | 7777 | 1981-03-23 |  4998.53 |    NULL |     10 |
+|  7679 | SHANE    | CLERK        | 7902 | 1980-08-03 |  7677.11 |  500.00 |     20 |
+|  7370 | Rajan    | manager      | 7777 | 2017-01-01 | 19765.35 | 3456.00 |     10 |
+|  7371 | REVATI   | ANALYST      | 7912 | 2019-01-01 | 12365.57 |  300.00 |     20 |
+|  7372 | WALL     | SALESMAN     | 7698 | 1981-01-05 |  4251.53 |  500.00 |     30 |
+|  7900 | tom      | manager      |   30 | 1980-01-18 | 15638.27 |  200.00 |     20 |
+| 11111 | tom      | manager      | 7839 | 2020-01-01 |     NULL |  100.00 |     30 |
+| 22222 | jerry    | clerk        | 7839 | 2020-02-15 | 29296.88 |    NULL |     30 |
+| 33333 | spike    | analyst      | 7839 | 2020-04-25 | 27993.60 |  200.00 |     30 |
+|   101 | NULL     | CAGE         | NULL | NULL       |  5500.00 |    NULL |   NULL |
+|   101 | John Doe | Manager      | NULL | 2023-05-01 |  5500.00 |    NULL |     10 |
++-------+----------+--------------+------+------------+----------+---------+--------+
+25 rows in set (0.00 sec)
+
+mysql>
+mysql> #8. to find all employees working in either deptno 20 or deptno 30
+mysql> select *
+    -> from emp
+    -> where deptno=20 or deptno=30;
++-------+--------+--------------+------+------------+----------+---------+--------+
+| EMPNO | ENAME  | job          | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+--------+--------------+------+------------+----------+---------+--------+
+|  7369 | SMITH  | SENIOR CLERK | 7902 | 1980-12-17 | 10800.00 |    NULL |     20 |
+|  7499 | ALAN   | SALESMAN     | 7698 | 1981-02-20 |  3178.02 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN     | 7698 | 1981-02-22 |  3055.80 |  500.00 |     30 |
+|  7566 | JONES  | MANAGER      | 7839 | 1981-04-02 |  6805.78 |    NULL |     20 |
+|  7654 | MARTIN | SALESMAN     | 7698 | 1981-09-28 |  3055.80 | 1400.00 |     30 |
+|  7698 | BLAKE  | MANAGER      | 7839 | 1981-05-01 |  6519.82 |    NULL |     30 |
+|  7788 | SCOTT  | ANALYST      | 7566 | 1982-12-09 |  9720.00 |    NULL |     20 |
+|  7844 | TURNER | SALESMAN     | 7698 | 1981-09-08 |  3188.65 |    0.00 |     30 |
+|  7876 | ADAMS  | CLERK        | 7788 | 1983-01-12 |  4196.18 |    NULL |     20 |
+|  7900 | JAMES  | CLERK        | 7698 | 1981-12-03 | 15638.27 |  500.00 |     30 |
+|  7902 | FORD   | ANALYST      | 7566 | 1981-12-03 |  9720.00 |    NULL |     20 |
+|  7679 | SHANE  | CLERK        | 7902 | 1980-08-03 |  7677.11 |  500.00 |     20 |
+|  7371 | REVATI | ANALYST      | 7912 | 2019-01-01 | 12365.57 |  300.00 |     20 |
+|  7372 | WALL   | SALESMAN     | 7698 | 1981-01-05 |  4251.53 |  500.00 |
+   30 |
+|  7900 | tom    | manager      |   30 | 1980-01-18 | 15638.27 |  200.00 |     20 |
+| 11111 | tom    | manager      | 7839 | 2020-01-01 |     NULL |  100.00 |     30 |
+| 22222 | jerry  | clerk        | 7839 | 2020-02-15 | 29296.88 |    NULL |     30 |
+| 33333 | spike  | analyst      | 7839 | 2020-04-25 | 27993.60 |  200.00 |     30 |
++-------+--------+--------------+------+------------+----------+---------+--------+
+18 rows in set (0.00 sec)
+
+mysql>
+mysql> #In operator
+mysql>
+mysql> select *
+    -> from emp
+    -> where deptno in (20,30);
++-------+--------+--------------+------+------------+----------+---------+--------+
+| EMPNO | ENAME  | job          | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+--------+--------------+------+------------+----------+---------+--------+
+|  7369 | SMITH  | SENIOR CLERK | 7902 | 1980-12-17 | 10800.00 |    NULL |     20 |
+|  7499 | ALAN   | SALESMAN     | 7698 | 1981-02-20 |  3178.02 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN     | 7698 | 1981-02-22 |  3055.80 |  500.00 |     30 |
+|  7566 | JONES  | MANAGER      | 7839 | 1981-04-02 |  6805.78 |    NULL |     20 |
+|  7654 | MARTIN | SALESMAN     | 7698 | 1981-09-28 |  3055.80 | 1400.00 |     30 |
+|  7698 | BLAKE  | MANAGER      | 7839 | 1981-05-01 |  6519.82 |    NULL |     30 |
+|  7788 | SCOTT  | ANALYST      | 7566 | 1982-12-09 |  9720.00 |    NULL |     20 |
+|  7844 | TURNER | SALESMAN     | 7698 | 1981-09-08 |  3188.65 |    0.00 |     30 |
+|  7876 | ADAMS  | CLERK        | 7788 | 1983-01-12 |  4196.18 |    NULL |     20 |
+|  7900 | JAMES  | CLERK        | 7698 | 1981-12-03 | 15638.27 |  500.00 |     30 |
+|  7902 | FORD   | ANALYST      | 7566 | 1981-12-03 |  9720.00 |    NULL |     20 |
+|  7679 | SHANE  | CLERK        | 7902 | 1980-08-03 |  7677.11 |  500.00 |     20 |
+|  7371 | REVATI | ANALYST      | 7912 | 2019-01-01 | 12365.57 |  300.00 |     20 |
+|  7372 | WALL   | SALESMAN     | 7698 | 1981-01-05 |  4251.53 |  500.00 |     30 |
+|  7900 | tom    | manager      |   30 | 1980-01-18 | 15638.27 |  200.00 |     20 |
+| 11111 | tom    | manager      | 7839 | 2020-01-01 |     NULL |  100.00 |     30 |
+| 22222 | jerry  | clerk        | 7839 | 2020-02-15 | 29296.88 |    NULL |     30 |
+| 33333 | spike  | analyst      | 7839 | 2020-04-25 | 27993.60 |  200.00 |     30 |
++-------+--------+--------------+------+------------+----------+---------+--------+
+18 rows in set (0.00 sec)
+
+mysql>
+mysql> #9. to find all employees with sal either 800 or 1600 or 1250
+mysql> select *
+    -> from emp
+    -> where sal in (800,1600,1250);
+Empty set (0.00 sec)
+
+mysql>
+mysql> #10. find all employees who have joined on either 1980-12-17 or 1981-05-01
+mysql> select *
+    -> from emp
+    -> where hiredate in ('1980-12-17','1981-05-01');
++-------+-------+--------------+------+------------+----------+------+--------+
+| EMPNO | ENAME | job          | MGR  | HIREDATE   | SAL      | COMM | DEPTNO |
++-------+-------+--------------+------+------------+----------+------+--------+
+|  7369 | SMITH | SENIOR CLERK | 7902 | 1980-12-17 | 10800.00 | NULL |     20 |
+|  7698 | BLAKE | MANAGER      | 7839 | 1981-05-01 |  6519.82 | NULL |     30 |
++-------+-------+--------------+------+------------+----------+------+--------+
+2 rows in set (0.00 sec)
+
+mysql>
+mysql> #11. to find all employees with sal >=1600 and <=5000;
+mysql> select *
+    -> from emp
+    -> where sal >=1600 and sal<=5000;
++-------+--------+----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | job      | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+----------+------+------------+---------+---------+--------+
+|  7499 | ALAN   | SALESMAN | 7698 | 1981-02-20 | 3178.02 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN | 7698 | 1981-02-22 | 3055.80 |  500.00 |     30 |
+|  7654 | MARTIN | SALESMAN | 7698 | 1981-09-28 | 3055.80 | 1400.00 |     30 |
+|  7844 | TURNER | SALESMAN | 7698 | 1981-09-08 | 3188.65 |    0.00 |     30 |
+|  7876 | ADAMS  | CLERK    | 7788 | 1983-01-12 | 4196.18 |    NULL |     20 |
+|  7934 | MILLER | manager  | 7777 | 1982-01-23 | 3420.05 |    NULL |     10 |
+|  7699 | Roger  | manager  | 7777 | 1981-03-23 | 4998.53 |    NULL |     10 |
+|  7372 | WALL   | SALESMAN | 7698 | 1981-01-05 | 4251.53 |  500.00 |     30 |
++-------+--------+----------+------+------------+---------+---------+--------+
+8 rows in set (0.00 sec)
+
+mysql>
+mysql> #between....and --- to check the range of values
+mysql>
+mysql> select *
+    -> from emp
+    -> where sal between 1600 and 5000;
++-------+--------+----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | job      | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+----------+------+------------+---------+---------+--------+
+|  7499 | ALAN   | SALESMAN | 7698 | 1981-02-20 | 3178.02 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN | 7698 | 1981-02-22 | 3055.80 |  500.00 |     30 |
+|  7654 | MARTIN | SALESMAN | 7698 | 1981-09-28 | 3055.80 | 1400.00 |     30 |
+|  7844 | TURNER | SALESMAN | 7698 | 1981-09-08 | 3188.65 |    0.00 |     30 |
+|  7876 | ADAMS  | CLERK    | 7788 | 1983-01-12 | 4196.18 |    NULL |     20 |
+|  7934 | MILLER | manager  | 7777 | 1982-01-23 | 3420.05 |    NULL |     10 |
+|  7699 | Roger  | manager  | 7777 | 1981-03-23 | 4998.53 |    NULL |     10 |
+|  7372 | WALL   | SALESMAN | 7698 | 1981-01-05 | 4251.53 |  500.00 |     30 |
++-------+--------+----------+------+------------+---------+---------+--------+
+8 rows in set (0.00 sec)
+
+mysql>
+mysql> #12. to find all employees with sal <=1600 or  >=5000
+mysql> select *
+    -> from emp
+    -> where sal not between 1600 and 5000;
++-------+----------+--------------+------+------------+----------+---------+--------+
+| EMPNO | ENAME    | job          | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+----------+--------------+------+------------+----------+---------+--------+
+|  7369 | SMITH    | SENIOR CLERK | 7902 | 1980-12-17 | 10800.00 |    NULL |     20 |
+|  7566 | JONES    | MANAGER      | 7839 | 1981-04-02 |  6805.78 |    NULL |     20 |
+|  7698 | BLAKE    | MANAGER      | 7839 | 1981-05-01 |  6519.82 |    NULL |     30 |
+|  7782 | CLARK    | manager      | 7777 | 1981-06-09 |  6445.49 |    NULL |     10 |
+|  7788 | SCOTT    | ANALYST      | 7566 | 1982-12-09 |  9720.00 |    NULL |     20 |
+|  7839 | KING     | manager      | 7777 | 1981-11-17 | 13154.03 |    NULL |     10 |
+|  7900 | JAMES    | CLERK        | 7698 | 1981-12-03 | 15638.27 |  500.00 |     30 |
+|  7902 | FORD     | ANALYST      | 7566 | 1981-12-03 |  9720.00 |    NULL |     20 |
+|  7679 | SHANE    | CLERK        | 7902 | 1980-08-03 |  7677.11 |  500.00 |     20 |
+|  7370 | Rajan    | manager      | 7777 | 2017-01-01 | 19765.35 | 3456.00 |     10 |
+|  7371 | REVATI   | ANALYST      | 7912 | 2019-01-01 | 12365.57 |  300.00 |     20 |
+|  7900 | tom      | manager      |   30 | 1980-01-18 | 15638.27 |  200.00 |     20 |
+| 22222 | jerry    | clerk        | 7839 | 2020-02-15 | 29296.88 |    NULL |     30 |
+| 33333 | spike    | analyst      | 7839 | 2020-04-25 | 27993.60 |  200.00 |     30 |
+|   101 | NULL     | CAGE         | NULL | NULL       |  5500.00 |    NULL |   NULL |
+|   101 | John Doe | Manager      | NULL | 2023-05-01 |  5500.00 |    NULL |     10 |
++-------+----------+--------------+------+------------+----------+---------+--------+
+16 rows in set (0.00 sec)
+
+mysql>
+mysql> #between....and --- to check the range of values
+mysql>
+mysql> select *
+    -> from emp
+    -> where sal between 1600 and 5000;
++-------+--------+----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | job      | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+----------+------+------------+---------+---------+--------+
+|  7499 | ALAN   | SALESMAN | 7698 | 1981-02-20 | 3178.02 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN | 7698 | 1981-02-22 | 3055.80 |  500.00 |     30 |
+|  7654 | MARTIN | SALESMAN | 7698 | 1981-09-28 | 3055.80 | 1400.00 |     30 |
+|  7844 | TURNER | SALESMAN | 7698 | 1981-09-08 | 3188.65 |    0.00 |     30 |
+|  7876 | ADAMS  | CLERK    | 7788 | 1983-01-12 | 4196.18 |    NULL |     20 |
+|  7934 | MILLER | manager  | 7777 | 1982-01-23 | 3420.05 |    NULL |     10 |
+|  7699 | Roger  | manager  | 7777 | 1981-03-23 | 4998.53 |    NULL |     10 |
+|  7372 | WALL   | SALESMAN | 7698 | 1981-01-05 | 4251.53 |  500.00 |     30 |
++-------+--------+----------+------+------------+---------+---------+--------+
+8 rows in set (0.00 sec)
+
+mysql>
+mysql>
+mysql> #12. to find all employees who joined in year 1981
+mysql>
+mysql> select *
+    -> from emp
+    -> where hiredate between '1981-01-01' and '1981-12-31';
++-------+--------+----------+------+------------+----------+---------+--------+
+| EMPNO | ENAME  | job      | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+--------+----------+------+------------+----------+---------+--------+
+|  7499 | ALAN   | SALESMAN | 7698 | 1981-02-20 |  3178.02 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN | 7698 | 1981-02-22 |  3055.80 |  500.00 |     30 |
+|  7566 | JONES  | MANAGER  | 7839 | 1981-04-02 |  6805.78 |    NULL |     20 |
+|  7654 | MARTIN | SALESMAN | 7698 | 1981-09-28 |  3055.80 | 1400.00 |     30 |
+|  7698 | BLAKE  | MANAGER  | 7839 | 1981-05-01 |  6519.82 |    NULL |     30 |
+|  7782 | CLARK  | manager  | 7777 | 1981-06-09 |  6445.49 |    NULL |     10 |
+|  7839 | KING   | manager  | 7777 | 1981-11-17 | 13154.03 |    NULL |     10 |
+|  7844 | TURNER | SALESMAN | 7698 | 1981-09-08 |  3188.65 |    0.00 |     30 |
+|  7900 | JAMES  | CLERK    | 7698 | 1981-12-03 | 15638.27 |  500.00 |     30 |
+|  7902 | FORD   | ANALYST  | 7566 | 1981-12-03 |  9720.00 |    NULL |     20 |
+|  7699 | Roger  | manager  | 7777 | 1981-03-23 |  4998.53 |    NULL |     10 |
+|  7372 | WALL   | SALESMAN | 7698 | 1981-01-05 |  4251.53 |  500.00 |     30 |
++-------+--------+----------+------+------------+----------+---------+--------+
+12 rows in set (0.00 sec)
+
+mysql>
+mysql> #13. to find all employees who are not working in dept 10 or 20
+mysql>
+mysql> select *
+    -> from emp
+    -> where deptno not in (10,20);
++-------+--------+----------+------+------------+----------+---------+--------+
+| EMPNO | ENAME  | job      | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+--------+----------+------+------------+----------+---------+--------+
+|  7499 | ALAN   | SALESMAN | 7698 | 1981-02-20 |  3178.02 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN | 7698 | 1981-02-22 |  3055.80 |  500.00 |     30 |
+|  7654 | MARTIN | SALESMAN | 7698 | 1981-09-28 |  3055.80 | 1400.00 |     30 |
+|  7698 | BLAKE  | MANAGER  | 7839 | 1981-05-01 |  6519.82 |    NULL |     30 |
+|  7844 | TURNER | SALESMAN | 7698 | 1981-09-08 |  3188.65 |    0.00 |     30 |
+|  7900 | JAMES  | CLERK    | 7698 | 1981-12-03 | 15638.27 |  500.00 |     30 |
+|  7372 | WALL   | SALESMAN | 7698 | 1981-01-05 |  4251.53 |  500.00 |     30 |
+| 11111 | tom    | manager  | 7839 | 2020-01-01 |     NULL |  100.00 |     30 |
+| 22222 | jerry  | clerk    | 7839 | 2020-02-15 | 29296.88 |    NULL |     30 |
+| 33333 | spike  | analyst  | 7839 | 2020-04-25 | 27993.60 |  200.00 |     30 |
++-------+--------+----------+------+------------+----------+---------+--------+
+10 rows in set (0.00 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
