@@ -11,4 +11,7 @@ public interface ProductService {
 	// retrive product
 	List<Product> getAllProducts();
 	
+	// retrieve product by ID 
+	Product getProductById(Long id);
+	
 }
