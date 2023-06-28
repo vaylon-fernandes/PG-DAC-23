@@ -16,6 +16,7 @@ td{
 
 input{
     border-radius: 5px;
+    color: black;
 }
 tr>td:first-child {
     text-align: right;
