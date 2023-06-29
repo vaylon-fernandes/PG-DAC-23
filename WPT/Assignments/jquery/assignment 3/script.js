@@ -1,6 +1,6 @@
 $(document).ready(function () {
-  $("#bookBtn").on("click", function (event) {
-    event.preventDefault();
+  $("#bookBtn").on("click", function () {
+    // event.preventDefault();
 
     var seats = parseInt($("#seats").val());
     if (seats > 0) {
@@ -27,7 +27,7 @@ $(document).ready(function () {
   });
 
   $("#submitBtn").on("click", function (event) {
-    event.preventDefault();
+    // event.preventDefault();
     var reservationDetails = {
       Name: $("#name").val(),
       Date: $("#date").val(),

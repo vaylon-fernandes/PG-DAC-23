@@ -5,8 +5,8 @@ $(document).ready(function () {
   });
 
   // Validate on form submission
-  $("#myForm").on("submit", function (event) {
-    event.preventDefault();
+  $("#myForm").on("click", function (event) {
+    // event.preventDefault();
 
     var username = $("#username").val();
 
