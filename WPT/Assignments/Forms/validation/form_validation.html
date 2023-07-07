@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Test Form with validation</h1>
+    <form name="myForm" onsubmit="return validateform()" action="/form">
+      <div class="form-div" id="name">
+        <label for="name">
+          <input type="text" name="name" placeholder="Enter name" />
+        </label>
+        <span class="error"></span>
+      </div>
+      <div class="form-div" id="phone">
+        <label for="phone">
+          <input type="number" name="phone" placeholder="Enter Phone" />
+        </label>
+        <span class="error"></span>
+      </div>
+      <input type="submit" value="btn" class="but" />
+    </form>
+    <script>
+      // set error in span tag
+      function seterror(id, error) {
+        el = document.getElementById(id);
+        el.getElementsByClassName("error")[0].innerHTML = error;
+      }
+
+      function validateform() {
+        var returnval = true;
+        let name = document.forms["myForm"]["name"].value;
+        let phone = document.forms["myForm"]["phone"].value;
+        console.log("name", name, name.length);
+        if (name.length < 5) {
+          seterror("name", "*Length of name is too short");
+          returnval = false;
+        }
+        if (phone.length != 10) {
+          seterror("phone", "*Phone number must contain 10 digits");
+        }
+        return returnval;
+      }
+    </script>
+  </body>
+</html>

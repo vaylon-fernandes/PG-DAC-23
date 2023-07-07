@@ -3,9 +3,10 @@ const app = express();
 const path = require("path");
 const m = require("./fun_01");
 
-app.get("/", function (req, resp) {
+app.get("/", (req, resp) => {
   resp.sendFile(path.join(__dirname, "index_01.html"));
 });
+
 app.get("/submit-data", function (req, resp) {
   const a = parseInt(req.query.num1);
   const b = parseInt(req.query.num2);
