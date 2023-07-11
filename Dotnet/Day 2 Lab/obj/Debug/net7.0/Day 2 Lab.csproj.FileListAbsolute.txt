@@ -1,0 +1,15 @@
+F:\Vaylon Dotnet\PG-DAC-23\Dotnet\Day 2 Lab\obj\Debug\net7.0\Day 2 Lab.csproj.AssemblyReference.cache
+F:\Vaylon Dotnet\PG-DAC-23\Dotnet\Day 2 Lab\obj\Debug\net7.0\Day 2 Lab.GeneratedMSBuildEditorConfig.editorconfig
+F:\Vaylon Dotnet\PG-DAC-23\Dotnet\Day 2 Lab\obj\Debug\net7.0\Day 2 Lab.AssemblyInfoInputs.cache
+F:\Vaylon Dotnet\PG-DAC-23\Dotnet\Day 2 Lab\obj\Debug\net7.0\Day 2 Lab.AssemblyInfo.cs
+F:\Vaylon Dotnet\PG-DAC-23\Dotnet\Day 2 Lab\obj\Debug\net7.0\Day 2 Lab.csproj.CoreCompileInputs.cache
+F:\Vaylon Dotnet\PG-DAC-23\Dotnet\Day 2 Lab\bin\Debug\net7.0\Day 2 Lab.exe
+F:\Vaylon Dotnet\PG-DAC-23\Dotnet\Day 2 Lab\bin\Debug\net7.0\Day 2 Lab.deps.json
+F:\Vaylon Dotnet\PG-DAC-23\Dotnet\Day 2 Lab\bin\Debug\net7.0\Day 2 Lab.runtimeconfig.json
+F:\Vaylon Dotnet\PG-DAC-23\Dotnet\Day 2 Lab\bin\Debug\net7.0\Day 2 Lab.dll
+F:\Vaylon Dotnet\PG-DAC-23\Dotnet\Day 2 Lab\bin\Debug\net7.0\Day 2 Lab.pdb
+F:\Vaylon Dotnet\PG-DAC-23\Dotnet\Day 2 Lab\obj\Debug\net7.0\Day 2 Lab.dll
+F:\Vaylon Dotnet\PG-DAC-23\Dotnet\Day 2 Lab\obj\Debug\net7.0\refint\Day 2 Lab.dll
+F:\Vaylon Dotnet\PG-DAC-23\Dotnet\Day 2 Lab\obj\Debug\net7.0\Day 2 Lab.pdb
+F:\Vaylon Dotnet\PG-DAC-23\Dotnet\Day 2 Lab\obj\Debug\net7.0\Day 2 Lab.genruntimeconfig.cache
+F:\Vaylon Dotnet\PG-DAC-23\Dotnet\Day 2 Lab\obj\Debug\net7.0\ref\Day 2 Lab.dll
