@@ -17,7 +17,7 @@ public class MathCal
     {
         const double PI = 3.14;
         area = PI * radius * radius;
-        circumference = PI * radius * radius;
+        circumference = 2*PI * radius;
 
     }
 }
