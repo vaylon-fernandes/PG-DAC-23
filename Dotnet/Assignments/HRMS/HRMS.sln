@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRLib", "HRLib\HRLib.csproj", "{BB802FF2-0EEC-4625-96FE-8141489C284F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyApp", "CompanyApp\CompanyApp.csproj", "{9400D27E-643D-402D-B18F-A8FCCBACEF49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taxation", "Taxation\Taxation.csproj", "{EEA6ECFD-18B7-470A-AD47-50EAD4C425DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB802FF2-0EEC-4625-96FE-8141489C284F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB802FF2-0EEC-4625-96FE-8141489C284F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB802FF2-0EEC-4625-96FE-8141489C284F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB802FF2-0EEC-4625-96FE-8141489C284F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9400D27E-643D-402D-B18F-A8FCCBACEF49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9400D27E-643D-402D-B18F-A8FCCBACEF49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9400D27E-643D-402D-B18F-A8FCCBACEF49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9400D27E-643D-402D-B18F-A8FCCBACEF49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEA6ECFD-18B7-470A-AD47-50EAD4C425DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEA6ECFD-18B7-470A-AD47-50EAD4C425DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEA6ECFD-18B7-470A-AD47-50EAD4C425DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEA6ECFD-18B7-470A-AD47-50EAD4C425DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E99E5D88-4B9C-4080-8BBF-3A196D863030}
+	EndGlobalSection
+EndGlobal
