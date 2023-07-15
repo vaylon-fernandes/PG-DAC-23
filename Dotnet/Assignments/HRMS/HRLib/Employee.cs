@@ -6,18 +6,20 @@ namespace HRLib
 
     {
 
+        
         public int empId { get; set; }
         public string firstName { get; set; } = string.Empty;
         public string lastName { get; set; } = string.Empty;
-        public string department { get; set; } = string.Empty;
+        //public string department { get; set; } = string.Empty;
         public double salary { get; set; }
+        public enum Department { HR, FINANCE, SALES};
+        public Department department { get; set; }
 
-
-        public Employee() { 
+        public Employee() {
             
         }
 
-        public Employee(int empId, string firstName, string lastName, string department, double salary)
+        public Employee(int empId, string firstName, string lastName, Department department, double salary)
         {
             this.empId = empId;
             this.firstName = firstName;

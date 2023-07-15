@@ -14,7 +14,7 @@ namespace HRLib
         private double incomeTaxPercent { get; set; }
         public double perfBonus { get; set; }
 
-        public SalesManager(int empId, string firstName, string lastName, string department, double salary, double perfBonus=0) 
+        public SalesManager(int empId, string firstName, string lastName, Department department, double salary, double perfBonus=0) 
             : base(empId, firstName, lastName, department, salary)
         {
             this.perfBonus = perfBonus;
