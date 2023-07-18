@@ -11,11 +11,14 @@ namespace HRWebApp.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        List<Employee> roster;
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+            roster = PersistEmployeeData.readRecords(Path.Combine(".", "Roster.json"));
         }
+
 
         public IActionResult Index()
         {
@@ -32,9 +35,8 @@ namespace HRWebApp.Controllers
         {
             return View();
         }
-        List<Employee> roster = new List<Employee>();
         [HttpPost]
-        public IActionResult Register(int id, string name, string email, string phoneNumber, string address, string department)
+        public IActionResult Register(string id, string name, string email, string phoneNumber, string address, string department, string password)
         {
             Employee emp = new Employee();
             emp.Id = id;
@@ -43,16 +45,25 @@ namespace HRWebApp.Controllers
             emp.PhoneNumber = phoneNumber;
             emp.Address = address;
             emp.Department = department;
+            emp.Password = password;
 
-            string fileName = @Path.Combine(Path.GetTempPath(), "Roster.json");
+            //string fileName = @Path.Combine(Path.GetTempPath(), "Roster.json");
+            string fileName = Path.Combine(".","Roster.json");
             
-            PersistEmployeeData.storeRecords(fileName, emp);
+            roster.Add(emp);
+
+            PersistEmployeeData.storeRecords(fileName, roster);
 
             List<Employee> list = PersistEmployeeData.readRecords(fileName);
             //Console.WriteLine("lst" + list[0]);
-            return Json(list);
+            return RedirectToAction("employeeList");
         }
 
+        [HttpGet]
+        public IActionResult EmployeeList()
+        {
+            return View(roster);
+        }
         [HttpGet]
         public IActionResult Login() { 
             return View();
@@ -60,7 +71,8 @@ namespace HRWebApp.Controllers
         [HttpPost]
         public IActionResult Login(string email,string password)
         {
-            if(email=="test@g.com" && password=="test")
+            bool findEmp = roster.Exists(emp=>emp.Email==email&&emp.Password==password);
+            if(findEmp)
             {
                 Console.WriteLine("Redirecting");
                 return RedirectToAction("Welcome");
