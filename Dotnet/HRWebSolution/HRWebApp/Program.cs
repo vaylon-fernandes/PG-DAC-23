@@ -10,10 +10,13 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
 }
+// Enable Static file serving 
 app.UseStaticFiles();
 
+// Adds Routing Middleware to the Application builder
 app.UseRouting();
 
+// Adds Authorisation Middleware to the Application builder
 app.UseAuthorization();
 
 app.MapControllerRoute(

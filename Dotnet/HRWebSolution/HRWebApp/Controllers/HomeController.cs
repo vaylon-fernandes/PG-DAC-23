@@ -11,11 +11,13 @@ namespace HRWebApp.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        // list to store employee records
         List<Employee> roster;
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+            // Load employee data on init
             roster = PersistEmployeeData.readRecords(Path.Combine(".", "Roster.json"));
         }
 
@@ -30,11 +32,14 @@ namespace HRWebApp.Controllers
             return View();
         }
 
+        // Method to get register view 
         [HttpGet]
         public IActionResult Register()
         {
             return View();
         }
+
+        // Post Method for User Registration -- Save details 
         [HttpPost]
         public IActionResult Register(string id, string name, string email, string phoneNumber, string address, string department, string password)
         {
@@ -47,8 +52,17 @@ namespace HRWebApp.Controllers
             emp.Department = department;
             emp.Password = password;
 
+            // check if emp exists 
+            bool empExists = roster.Exists(emp => emp.Email == email);
+            if (empExists)
+            {
+                return RedirectToAction("Login");
+            }
+
             //string fileName = @Path.Combine(Path.GetTempPath(), "Roster.json");
-            string fileName = Path.Combine(".","Roster.json");
+
+            // Root directory + filename.json 
+            string fileName = @Path.Combine(".","Roster.json");
             
             roster.Add(emp);
 
@@ -56,12 +70,15 @@ namespace HRWebApp.Controllers
 
             List<Employee> list = PersistEmployeeData.readRecords(fileName);
             //Console.WriteLine("lst" + list[0]);
+
+            // redirect to employeeList action
             return RedirectToAction("employeeList");
         }
 
         [HttpGet]
         public IActionResult EmployeeList()
         {
+            // Return view with 
             return View(roster);
         }
         [HttpGet]
