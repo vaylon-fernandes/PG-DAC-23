@@ -1,0 +1,40 @@
+﻿@using BOL;
+@{
+    ViewData["title"] = "Register Employee";
+}
+
+<form method="post">
+    <div class="mb-3">
+        <label for="empid" class="form-label">Employee ID</label>
+        <input name="empid" type="text" class="form-control" id="empid" aria-describedby="textHelp">
+    </div>
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input name="name" type="text" class="form-control" id="name">
+    </div>
+    <div class="mb-3">
+        <label for="salary" class="form-label">Salary</label>
+        <input name="salary"  type="text" class="form-control" id="salary">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input name="email" type="email"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="department" class="form-label">Department</label>
+        <input name="department"  type="text" class="form-control" id="department">
+    </div>
+    <div class="mb-3">
+        <label for="phonenumber" class="form-label">Phone Number</label>
+        <input name="phonenumber" type="text" class="form-control" id="phonenumber">
+    </div>
+    <div class="mb-3">
+        <label for="address" class="form-label">Address</label>
+        <input name="address" type="text" class="form-control" id="address">
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input name="password" type="text" class="form-control" id="Password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

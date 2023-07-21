@@ -1,0 +1,46 @@
+﻿@using BOL;
+@{
+    ViewData["Title"] = "Employee Index";
+}
+
+<div>
+    <h1>
+        Employee List:
+    </h1>
+    @{
+        List<Employee> allEmps = ViewData["employees"] as List<Employee>;
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Employee ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Department</th>
+                    <th scoce="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach(Employee emp in allEmps){
+                <tr>
+                    <th scope="row">@emp.Id</th>
+                    <td>@emp.Name</td>
+                    <td>@emp.Email</td>
+                    <td>@emp.Salary</td>
+                    <td>@emp.PhoneNumber</td>
+                    <td>@emp.Address</td>
+                    <td>@emp.Department</td>
+                    <td>
+                        <a class="btn btn-primary" href="/employee/update/@emp.Id">Update</a>
+                           <a class="btn btn-danger" href="/employee/fireemp/@emp.Id">Fire</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+            
+    }
+</div>
