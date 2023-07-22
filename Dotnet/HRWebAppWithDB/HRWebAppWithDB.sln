@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLL", "BLL\BLL.csproj", "{B48D7650-D680-494B-B210-B2AAD42A50D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRWebApp", "HRWebApp\HRWebApp.csproj", "{90EA350A-56AE-412C-9B27-F32C85ACD022}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HRWebApp", "HRWebApp\HRWebApp.csproj", "{90EA350A-56AE-412C-9B27-F32C85ACD022}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRWebAPI", "HRWebAPI\HRWebAPI.csproj", "{5656EB5C-A029-4F9D-9C96-B2EF13966CF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{90EA350A-56AE-412C-9B27-F32C85ACD022}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90EA350A-56AE-412C-9B27-F32C85ACD022}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90EA350A-56AE-412C-9B27-F32C85ACD022}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5656EB5C-A029-4F9D-9C96-B2EF13966CF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5656EB5C-A029-4F9D-9C96-B2EF13966CF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5656EB5C-A029-4F9D-9C96-B2EF13966CF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5656EB5C-A029-4F9D-9C96-B2EF13966CF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

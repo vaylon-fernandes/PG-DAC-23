@@ -45,6 +45,8 @@ namespace HRWebApp.Controllers
 
             return View();
         }
+
+        [HttpDelete]
         public ActionResult Fireemp(int id)
         {
             Console.WriteLine(id);
