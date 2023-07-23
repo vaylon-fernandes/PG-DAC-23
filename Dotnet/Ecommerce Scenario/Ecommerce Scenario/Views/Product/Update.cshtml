@@ -1,0 +1,35 @@
+﻿@using BOL;
+@{
+    ViewData["title"] = "Update Employee";
+}
+@{
+    Product product = ViewData["product"] as Product;
+}
+<form action="/product/update/@product.Id" method="post">
+    <div class="mb-3">
+        <label for="productid" class="form-label">Employee ID</label>
+        <input name="productid" value=@product.Id type="text" class="form-control" id="productid" aria-describedby="textHelp" disabled>
+    </div>
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input name="name" value=@product.Name type="text" class="form-control" id="name">
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <input name="description" value=@product.Description type="text" class="form-control" id="description">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Price</label>
+        <input name="price" type="text" value=@product.Price class="form-control" id="exampleInputEmail1" aria-describedby="priceHelp">
+    </div>
+    <div class="mb-3">
+        <label for="category" class="form-label">Category
+        </label>
+        <input name="category" value=@product. type="text" class="form-control" id="category">
+    </div>
+    <div class="mb-3">
+        <label for="quantity" class="form-label">Quantity</label>
+        <input name="quantity" value=@product.Quantity type="text" class="form-control" id="quantity">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

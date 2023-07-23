@@ -1,0 +1,7 @@
+﻿namespace BOL
+{
+    public enum Category
+    {
+        HOME,FOOTWEAR,CLOTHES,BOOKS,CUTLERY,KITCHENWARE,COSMETICS,ELECTRONICS,GENERAL,MISCELLANEOUS
+    }
+}
