@@ -23,6 +23,24 @@ namespace Ecommerce_Scenario.Controllers
             return View();
         }
 
+        [HttpGet("/product/insert")]
+        public IActionResult Insert()
+        {
+            Models.Product product = new Models.Product();
+            return View(product);
+        }
+
+        [HttpPost("/product/insert")]
+        public IActionResult Insert(Product newProduct)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            DBManager.InsertProduct(newProduct);
+            return RedirectToAction("Index");
+        }
+
         [HttpGet("/product/{id}")]
         public IActionResult Product(int id) {
             CatalogManager catalogManager = new CatalogManager();
@@ -30,6 +48,8 @@ namespace Ecommerce_Scenario.Controllers
             this.ViewData["product"] = product; 
             return View();
         }
+
+        
         [HttpGet("/product/update/{id}")]
         public IActionResult Update(int id)
         {

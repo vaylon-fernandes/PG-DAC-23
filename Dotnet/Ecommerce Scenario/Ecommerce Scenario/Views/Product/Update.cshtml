@@ -3,7 +3,7 @@
     ViewData["title"] = "Update Employee";
 }
 @{
-    Product product = ViewData["product"] as Product;
+    BOL.Product product = ViewData["product"] as BOL.Product;
 }
 <form action="/product/update/@product.Id" method="post">
     <div class="mb-3">

@@ -4,7 +4,7 @@
 }
 
  @{
-        Product prod = ViewData["product"] as Product;
+        BOL.Product prod = ViewData["product"] as BOL.Product;
 <h1>Product @prod.Id</h1>
 <table class="table">
     <thead>
@@ -19,8 +19,7 @@
             
         </tr>
     </thead>
-   
-
+       
         <tbody>
                 <tr>
                     <th scope="row">@prod.Id</th>

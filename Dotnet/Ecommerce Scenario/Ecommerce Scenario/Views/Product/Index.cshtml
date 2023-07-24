@@ -12,11 +12,12 @@
         </tr>
     </thead>
     @{
-        List<Product> allProducts = ViewData["products"] as List<Product>;
+        List<BOL.Product> allProducts = ViewData["products"] as List<BOL.Product>;
     
     <tbody>
-        
-        @foreach(Product prod in allProducts)
+            <a href="/product/insert">Add Product</a>
+
+        @foreach(BOL.Product prod in allProducts)
         {
             <tr>
                 <th scope="row">@prod.Id</th>

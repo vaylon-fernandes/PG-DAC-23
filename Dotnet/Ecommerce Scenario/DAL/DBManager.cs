@@ -112,7 +112,10 @@ namespace DAL
                     command.Connection = mySqlConnection;
                     string query = $"INSERT INTO products (id, name, description, category, price, quantity) " +
                         $"VALUES ({product.Id}, '{product.Name}', '{product.Description}', " +
-                        $"'{product.ProductCategory}', 39.99, 70);";
+                        $"'{product.ProductCategory}', {product.Price}, {product.Quantity})";
+                    command.CommandText = query;
+                    command.ExecuteNonQuery();
+                    status = true;
                 }
                 catch (Exception ex) {
                     Console.WriteLine(ex.Message);
