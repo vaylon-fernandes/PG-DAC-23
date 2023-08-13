@@ -57,5 +57,57 @@ namespace DAL
             }
             return products;
         }
+
+        public static bool AddProduct(Product prod)
+        {
+            bool status = false;
+            if(prod!=null)
+            {
+                status = false;
+                MySqlConnection con = new MySqlConnection();
+                con.ConnectionString = conString;
+                try
+                {
+                    con.Open();
+                    MySqlCommand cmd = new MySqlCommand();
+                    cmd.Connection = con;
+                    string query = $"INSERT INTO products (id, name, description, category, price, quantity) " +
+                        $"values({prod.Id},'{prod.Name}','{prod.Description}','{prod.ProductCategory}',{prod.Price},{prod.Quantity})";
+                    cmd.CommandText = query;
+                    cmd.ExecuteNonQuery();
+                    status = true;
+                }
+                catch(Exception ex) { 
+                    Console.WriteLine(ex.Message);
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
+            return status; 
+        }
+
+        public static bool updateProduct(Product prod)
+        {
+            bool status = false;
+            MySqlConnection mySqlConnection = new MySqlConnection();
+            mySqlConnection.ConnectionString = conString;
+            try
+            {
+                mySqlConnection.Open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = mySqlConnection;
+                string query = $"UPDATE products SET  id={prod.Id},name='{prod.Name}',description='{prod.Description}'," +
+                    $"category={prod.ProductCategory},price={prod.Price},quantity={prod.Quantity}";
+                cmd.CommandText = query;
+                cmd.ExecuteNonQuery();
+                status = true;
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally { mySqlConnection.Close(); }
+
+            return status;
+        }
     }
 }
