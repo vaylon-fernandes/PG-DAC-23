@@ -1,0 +1,12 @@
+﻿@using BOL;
+@{
+    List<Product> products = ViewData["products"] as List<Product>;
+}
+<h1>List:</h1>
+@foreach (Product prod in products)
+{
+    <tr>
+        <th scope="row">@prod.Id</th>
+        <td><a href="product/@prod.Id">@prod.Name</a></td>
+    </tr>
+}

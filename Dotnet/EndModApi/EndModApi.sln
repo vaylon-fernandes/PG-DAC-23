@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EndModApi", "EndModApi\EndModApi.csproj", "{B937F2BA-B5C4-4B49-9992-5CE07914C04F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B937F2BA-B5C4-4B49-9992-5CE07914C04F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B937F2BA-B5C4-4B49-9992-5CE07914C04F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B937F2BA-B5C4-4B49-9992-5CE07914C04F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B937F2BA-B5C4-4B49-9992-5CE07914C04F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D154FF43-B5AD-4CEE-B5E2-C4706A20D093}
+	EndGlobalSection
+EndGlobal

@@ -123,7 +123,9 @@ namespace DAL.Connected
             mySqlConnection.ConnectionString = conString;
             try
             {
-                string query = $"UPDATE employees SET ename='{employee.Name}', department='{employee.Department}', email='{employee.Email}', phoneNumber='{employee.PhoneNumber}', address='{employee.Address}',salary='{employee.Salary}' WHERE id={employee.Id}";
+                string query = $"UPDATE employees SET ename='{employee.Name}', department='{employee.Department}'," +
+                    $" email='{employee.Email}', phoneNumber='{employee.PhoneNumber}', address='{employee.Address}'," +
+                    $"salary='{employee.Salary}' WHERE id={employee.Id}";
                 MySqlCommand command = new MySqlCommand(query, mySqlConnection);
                 mySqlConnection.Open();
                 command.ExecuteNonQuery();
