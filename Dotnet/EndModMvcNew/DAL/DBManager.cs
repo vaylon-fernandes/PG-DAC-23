@@ -58,6 +58,52 @@ namespace DAL
             return products;
         }
 
+        public static Product GetProduct(int id)
+        {
+            string query = "SELECT * FROM products where id="+id;
+            Product product = null;
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = conString;
+            try
+            {
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = query;
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    string name = reader["name"].ToString();
+                    string description = reader["description"].ToString();
+                    double price = double.Parse(reader["price"].ToString());
+                    int quantity = int.Parse(reader["quantity"].ToString());
+                    Category category = Enum.Parse<Category>(reader["category"].ToString(), ignoreCase: true);
+
+                    product = new Product
+                    {
+                        Id = id,
+                        Name = name,
+                        Description = description,
+                        Price = price,
+                        Quantity = quantity,
+                        ProductCategory = category,
+                    };
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return product;
+        }
+
         public static bool AddProduct(Product prod)
         {
             bool status = false;
@@ -98,8 +144,8 @@ namespace DAL
                 mySqlConnection.Open();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = mySqlConnection;
-                string query = $"UPDATE products SET  id={prod.Id},name='{prod.Name}',description='{prod.Description}'," +
-                    $"category={prod.ProductCategory},price={prod.Price},quantity={prod.Quantity}";
+                string query = $"UPDATE products SET name='{prod.Name}',description='{prod.Description}'," +
+                    $"category='{prod.ProductCategory}',price={prod.Price},quantity={prod.Quantity} where id={prod.Id}";
                 cmd.CommandText = query;
                 cmd.ExecuteNonQuery();
                 status = true;
@@ -109,5 +155,28 @@ namespace DAL
 
             return status;
         }
+
+        public static bool deleteProductByName(string name) {
+            bool status = false;
+            MySqlConnection mySqlConnection = new MySqlConnection();
+            mySqlConnection.ConnectionString = conString;
+            try
+            {
+                mySqlConnection.Open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = mySqlConnection;
+                Console.WriteLine(name);
+                string query = $"DELETE from products where name='{name}'";
+                Console.WriteLine(query);
+                cmd.CommandText = query;
+                cmd.ExecuteNonQuery();
+                status = true;
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally { mySqlConnection.Close(); }
+
+            return status;
+        }
+        
     }
 }

@@ -1,12 +1,13 @@
 ﻿@using BOL;
 @{
-    List<Product> products = ViewData["products"] as List<Product>;
+    List<BOL.Product> products = ViewData["products"] as List<BOL.Product>;
 }
 <h1>List:</h1>
-@foreach (Product prod in products)
+@foreach (BOL.Product prod in products)
 {
     <tr>
         <th scope="row">@prod.Id</th>
-        <td><a href="product/@prod.Id">@prod.Name</a></td>
+        <td><a href="product/get/@prod.Id">@prod.Name</a></td>
+        
     </tr>
 }

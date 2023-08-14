@@ -33,7 +33,10 @@ private Category productCategory;*/
         public double Price { get; set; }
         public int Quantity { get; set; }
         public Category ProductCategory{ get; set; }
-        
-        
+
+        public override string ToString()
+        {
+            return $"id:{Id},  Name:{Name}, description:{Description}, Price:{Price}, quantity: {Quantity}, Category:{ProductCategory}";
+        }
     }
 }
